@@ -1,0 +1,118 @@
+/* Genel stil ayarları */
+html, body {
+    background: #000; /* Arka planı siyah yap */
+    color: #fff; /* Metin rengini beyaz yap */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Arka plan animasyonu */
+body {
+    background: #000; /* Arka planı siyah yap */
+    color: #fff; /* Metin rengini beyaz yap */
+    overflow: hidden; /* Sayfa kaydırmasını engelle */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Genel yazı tipi */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    z-index: -1;
+    animation: backgroundAnimation 15s linear infinite;
+}
+
+/* Arka plan animasyon keyframes */
+@keyframes backgroundAnimation {
+    0% {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    }
+    50% {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    }
+    100% {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+    }
+}
+
+/* Video downloader kutusu */
+.card {
+    background-color: #333; /* Koyu gri arka plan */
+    color: #fff; /* Beyaz metin rengi */
+    border: 1px solid #444; /* Hafif gri border */
+    border-radius: 10px; /* Köşe yuvarlama */
+    padding: 20px; /* İçerik için padding */
+}
+
+/* Button Style 1 */
+.btn-style-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #007bff; /* Birincil renk */
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.btn-style-1:hover {
+    background-color: #0056b3; /* Daha koyu ton */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Hover durumunda butonu büyütme */
+}
+
+.btn-style-1:active {
+    background-color: #004085; /* Aktif durumda daha koyu ton */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95); /* Aktif durumda butonu küçültme */
+}
+
+/* Progress bar container */
+#progress {
+    height: 20px;
+    width: 100%;
+    background-color: #555; /* Koyu gri arka plan */
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    margin-top: 10px; /* Boşluk için margin */
+}
+
+/* Progress bar */
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50; /* Yeşil ilerleme rengi */
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 5px;
+    transition: width 0.3s ease; /* Yumuşak genişleme geçişi */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222; /* Koyu gri arka plan */
+    color: #fff; /* Beyaz metin rengi */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
